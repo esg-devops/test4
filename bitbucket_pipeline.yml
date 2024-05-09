@@ -1,0 +1,13 @@
+- step:
+    name: 'Deploy to production'
+    deployment: production
+    trigger: 'manual'
+    script:
+      - echo "Deployed to production."
+- step:
+    name: 'Deploy to prod-east'
+    deployment: prod-east
+    trigger: 'manual'
+    script:
+      - echo "Deployed to prod-east."
+      
