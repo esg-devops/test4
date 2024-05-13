@@ -1,0 +1,23 @@
+name: Bitbucket-conection
+id: 'ari:cloud:compass:471482bd-fced-4aab-acdd-db9b03bd040e:component/73552737-cc83-400e-a682-e535f1844fab/69e834e3-e2c1-40a6-a910-7332e3d8eae9'
+description: Testing
+configVersion: 1
+typeId: SERVICE
+ownerId: 'ari:cloud:identity::team/22639da9-8363-471d-b0c1-f8783f476d4f'
+fields:
+  tier: 4
+links:
+  - name: ''
+    type: REPOSITORY
+    url: 'https://bitbucket.org/mgtechsoft/hemanth-playground'
+  - name: ''
+    type: PROJECT
+    url: 'https://bitbucket.org/mgtechsoft/workspace/projects/jeet_managed'
+relationships: {}
+labels:
+  - jira-import
+  - synced-with-jsm
+customFields: null
+
+# Learn more about formatting compass.yml:
+# https://go.atlassian.com/compass-yml-format
