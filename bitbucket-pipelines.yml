@@ -3,7 +3,7 @@
 #--------------
 # You can specify a custom docker image from Docker Hub as your build environment.
 
-images: atlassian/default-image:3
+image: atlassian/default-image:
 
 pipelines:
   default:
