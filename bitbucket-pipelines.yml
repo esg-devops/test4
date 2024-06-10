@@ -11,7 +11,18 @@ pipelines:
       - step:
           name: 'Build and Test'
           script:
-            - echo "Your build and test goes here..."
+          - echo "Building and Testing..."
+          # Add your build commands here
+          - mvn clean install
+          # Ensure test reports are generated in one of the specified directories
+          - mv target/surefire-reports/* target/test-reports/
+      - step:
+          name: 'List Test Report Directory'
+          script:
+          - echo "Listing test report directory..."
+          - ls -R target/test-reports/
+
+            
       - step:
           name: 'Lint'
           script:
