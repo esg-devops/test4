@@ -41,7 +41,7 @@ pipelines:
           - export USER_EMAIL="hemanth.m@mgtechsoft.com"
           - export USER_API_KEY="ATATT3xFfGF0YL9zUFL7RjY9fhnEagloHY_G8rvqOCtv-fdRSOctwOWaheFDhca5RH4w4MkHzKuri-yyoTtmRd-KU50ZoRZPJqvJCICH3srNMnm24NT0_5DRZlCwN7NJVXGlNMfOl3emruGLXwgmCkvT10HyNYBpXzmqVEm6zOO9qVTZnR7ossE=BAEA3196"
           - export METRIC_VALUE= >%
-          - timestamp=$(date -u +'%Y-%m-%dT%H:%M:%SZ')
+          - timestamp=$(date -u +'2024-06-10T12::00:00Z')
           - |
             curl --request POST \
                  --url https://mgtechdemo.atlassian.net/gateway/api/compass/v1/metrics \
