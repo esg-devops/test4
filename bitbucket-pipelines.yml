@@ -49,7 +49,7 @@ pipelines:
                  --header "Accept: application/json" \
                  --header "Content-Type: application/json" \
                  --data "{
-                   \"metricSourceId\": \"ari:cloud:compass:471482bd-fced-4aab-acdd-db1234567890\",
+                   \"metricSourceId\": \"ari:cloud:compass:471482bd-fced-4aab-acdd-db1234567890:metric-source/73552737-cc83-400e-a682-e535f1844fab/3886ae29-cd24-4f91-be02-0c848560f7f5\",
                    #\"value\": $METRIC_VALUE,
                    \"timestamp\": \"$timestamp\"
                  }"
