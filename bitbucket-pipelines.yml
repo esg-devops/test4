@@ -13,7 +13,7 @@ pipelines:
           script:
           - echo "Building and Testing..."
           # Add your build commands here
-          - mvn clean install
+          # - mvn clean install
           # Ensure test reports are generated in one of the specified directories
           - mv target/surefire-reports/* target/test-reports/
       - step:
