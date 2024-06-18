@@ -1,0 +1,5 @@
+mvn clean verify sonar:sonar \
+  -Dsonar.projectKey=bitbucket_do_not_delete_AZAqwrbP-hzeCfPlofjI \
+  -Dsonar.projectName='do_not_delete' \
+  -Dsonar.host.url=http://172.22.23.248:9000 \
+  -Dsonar.token=sqp_2551258edcdaee711285961afa9477ca0827cf91
