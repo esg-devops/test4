@@ -1,3 +1,4 @@
+#sonar test
 image: maven:3-openjdk-11
 
 definitions:
