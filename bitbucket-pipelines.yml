@@ -1,0 +1,21 @@
+image: maven:3-openjdk-11
+
+definitions:
+  steps:
+    - step: &build-step
+        name: SonarQube analysis
+        caches:
+          - maven
+          - sonar
+        script:
+          - mvn verify sonar:sonar -Dsonar.projectKey=mgtechsoft_hemanth-playground_AZArNg8J-hzeCfPlofjZ -Dsonar.projectName='Hemanth-Playground'
+  caches:
+    sonar: ~/.sonar
+
+clone:
+  depth: full
+  
+pipelines:
+  branches:
+    '{Main}':
+      - step: *build-step
