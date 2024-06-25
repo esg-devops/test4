@@ -24,6 +24,19 @@
             <scope>test</scope>
         </dependency>
     </dependencies>
+    
+    <distributionManagement>
+    <repository>
+        <id>central</id>
+        <name>1de18057713e-releases</name>
+        <url>http://172.22.22.200:8081/artifactory/test-porject-Test-Project</url>
+    </repository>
+    <snapshotRepository>
+        <id>snapshots</id>
+        <name>1de18057713e-snapshots</name>
+        <url>http://172.22.22.200:8081/artifactory/test-porject-Test-Project</url>
+    </snapshotRepository>
+</distributionManagement>
 
     <build>
         <plugins>
@@ -42,6 +55,7 @@
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>2.22.2</version>
             </plugin>
+            
              <!--
             <plugin>
                 <groupId>org.sonarsource.scanner.maven</groupId>
