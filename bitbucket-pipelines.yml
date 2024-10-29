@@ -1,11 +1,13 @@
 # bitbucket-pipelines.yml
-image: node:16 # Starting with a Node.js base image for consistency
+image: docker:20.10.16  # Use a Docker image with Docker CLI installed
 
 pipelines:
   branches:
     main:
       - step:
           name: Build
+          services:
+            - docker
           script:
             - echo "Simulating Build Process with Docker"
             - docker pull alpine:latest  # Pull a lightweight image
@@ -14,6 +16,8 @@ pipelines:
 
       - step:
           name: Test
+          services:
+            - docker
           script:
             - echo "Simulating Test Process"
             - docker run --rm alpine:latest sh -c "echo 'Running tests in container'; ls /bin"  # List contents to simulate tests
@@ -30,3 +34,8 @@ pipelines:
           script:
             - echo "Deploying to Production"
             - echo "Deployment simulated successfully"
+
+definitions:
+  services:
+    docker:
+      memory: 1024  # Allocating memory for the Docker service
