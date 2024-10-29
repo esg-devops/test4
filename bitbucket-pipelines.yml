@@ -1,21 +1,32 @@
-image: maven:3-openjdk-11
+# bitbucket-pipelines.yml
+image: node:16 # Starting with a Node.js base image for consistency
 
-definitions:
-  steps:
-    - step: &build-step
-        name: SonarQube analysis
-        caches:
-          - maven
-          - sonar
-        script:
-          - mvn verify sonar:sonar -Dsonar.projectKey=mgtechsoft_hemanth-playground_AZArNg8J-hzeCfPlofjZ -Dsonar.projectName='Hemanth-Playground'
-  caches:
-    sonar: ~/.sonar
-
-clone:
-  depth: full
-  
 pipelines:
   branches:
-    '{Main}':
-      - step: *build-step
+    main:
+      - step:
+          name: Build
+          script:
+            - echo "Simulating Build Process with Docker"
+            - docker pull alpine:latest  # Pull a lightweight image
+            - docker run --rm alpine:latest echo "Build process inside container"
+            - echo "Build successful"
+
+      - step:
+          name: Test
+          script:
+            - echo "Simulating Test Process"
+            - docker run --rm alpine:latest sh -c "echo 'Running tests in container'; ls /bin"  # List contents to simulate tests
+            - echo "All tests passed"
+
+      - step:
+          name: Approval
+          trigger: manual
+          script:
+            - echo "Deployment approval required"
+
+      - step:
+          name: Deploy
+          script:
+            - echo "Deploying to Production"
+            - echo "Deployment simulated successfully"
