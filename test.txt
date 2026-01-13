@@ -1,4 +1,26 @@
-test
+Option A (Best if you’re on Jira Cloud): Use Jira DevInfo API to backfill commits
 
+Atlassian provides a Development Information REST API to store commits/branches/PRs so they appear in the Jira issue Development panel.
+This is typically used by:
 
-test2
+Atlassian Connect apps (with the jiraDevelopmentTool module)
+
+Or “on-prem tools → Jira Cloud” using OAuth-based integration
+
+How custom backfill works (high level)
+
+Extract commit history from the migrated GitHub repo (e.g., git log --all).
+
+Parse Jira issue keys from commit messages (e.g., ABC-123).
+
+Build a DevInfo payload containing:
+
+repository
+
+commits (id/SHA, message, author, timestamp, url)
+
+associations to issue keys
+
+POST to Jira DevInfo “bulk store” endpoint so Jira renders those commits in the issue’s Development panel.
+
+.////// Test
